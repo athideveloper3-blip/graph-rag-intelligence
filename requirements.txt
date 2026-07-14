@@ -5,6 +5,8 @@ pandas>=2.0
 networkx>=3.2
 faiss-cpu>=1.7.4
 sentence-transformers>=2.6.0
+torch
+torchvision
 pyvis>=0.3.2
 streamlit-chat>=0.1.1
 pdfplumber>=0.11.0
