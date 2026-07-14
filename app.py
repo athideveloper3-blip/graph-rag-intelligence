@@ -80,32 +80,32 @@ st.set_page_config(
 # ── Glass Intelligence CSS ────────────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
 :root {
-    --bg:        #0a0e1a;
-    --bg-2:      #0f1625;
-    --bg-3:      #141d30;
-    --panel:     rgba(255,255,255,0.04);
-    --panel-2:   rgba(255,255,255,0.07);
-    --border:    rgba(255,255,255,0.08);
-    --border-2:  rgba(255,255,255,0.13);
-    --lead:      #f0f4ff;
-    --muted:     #6b7fa3;
-    --dim:       #3a4a6b;
-    --indigo:    #6366f1;
-    --indigo-2:  #818cf8;
-    --purple:    #8b5cf6;
-    --violet:    rgba(99,102,241,0.15);
-    --violet-2:  rgba(99,102,241,0.25);
+    --bg:        #ffffff;
+    --bg-2:      #faf9ff;
+    --bg-3:      #f4f2ff;
+    --panel:     rgba(124,58,237,0.045);
+    --panel-2:   rgba(124,58,237,0.08);
+    --border:    rgba(76,29,149,0.10);
+    --border-2:  rgba(76,29,149,0.18);
+    --lead:      #1e1b2e;
+    --muted:     #766f96;
+    --dim:       #b3aad4;
+    --indigo:    #7c3aed;
+    --indigo-2:  #6d28d9;
+    --purple:    #a855f7;
+    --violet:    rgba(124,58,237,0.09);
+    --violet-2:  rgba(124,58,237,0.22);
     --teal:      #10b981;
-    --teal-dim:  rgba(16,185,129,0.15);
-    --amber:     #f59e0b;
-    --amber-dim: rgba(245,158,11,0.12);
-    --rose:      #f43f5e;
-    --rose-dim:  rgba(244,63,94,0.12);
-    --ice:       #67e8f9;
-    --ice-dim:   rgba(103,232,249,0.10);
+    --teal-dim:  rgba(16,185,129,0.10);
+    --amber:     #d97706;
+    --amber-dim: rgba(217,119,6,0.10);
+    --rose:      #e11d48;
+    --rose-dim:  rgba(225,29,72,0.10);
+    --ice:       #7c3aed;
+    --ice-dim:   rgba(124,58,237,0.08);
     --r:         8px;
     --r-lg:      12px;
     --r-xl:      16px;
@@ -117,6 +117,10 @@ html, body, [class*="css"] {
     color: var(--lead);
     -webkit-font-smoothing: antialiased;
 }
+h1, h2, h3, .hero-title, .page-title, .logo-mark, .step-label {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+.stApp { background: radial-gradient(circle at 20% 0%, #f6f2ff 0%, #ffffff 45%) !important; }
 .main .block-container { padding-top: 0 !important; padding-bottom: 3rem; max-width: 1400px; }
 
 section[data-testid="stSidebar"] {
@@ -357,13 +361,13 @@ div[data-testid="stSpinner"] > div { border-top-color: var(--indigo) !important;
 .msg-user {
     background: var(--panel); border: 1px solid var(--border); border-left: 2px solid var(--dim);
     padding: 14px 18px; border-radius: 0 var(--r-lg) var(--r-lg) 0;
-    font-size: 0.88rem; line-height: 1.65; color: #c8d3f0;
+    font-size: 0.88rem; line-height: 1.65; color: #3a3357;
 }
 .msg-user::before { content: 'YOU'; font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; letter-spacing: 2.5px; color: var(--muted); display: block; margin-bottom: 6px; }
 .msg-ai {
     background: var(--violet); border: 1px solid var(--violet-2); border-left: 2px solid var(--indigo);
     padding: 14px 18px; border-radius: 0 var(--r-lg) var(--r-lg) 0;
-    font-size: 0.88rem; line-height: 1.7; color: #dde4ff;
+    font-size: 0.88rem; line-height: 1.7; color: #2c1a52;
 }
 .msg-ai::before { content: 'GRAPH RAG'; font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; letter-spacing: 2.5px; color: var(--indigo-2); display: block; margin-bottom: 6px; }
 
@@ -374,7 +378,7 @@ div[data-testid="stSpinner"] > div { border-top-color: var(--indigo) !important;
 .chunk-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; font-weight: 500; color: var(--indigo-2); background: var(--violet); border: 1px solid var(--violet-2); padding: 2px 8px; border-radius: 4px; letter-spacing: 1px; }
 .chunk-doc { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted); background: var(--bg-3); border: 1px solid var(--border); padding: 2px 8px; border-radius: 4px; }
 .chunk-score { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--teal); margin-left: auto; }
-.chunk-text { font-size: 0.84rem; color: #c8d3f0; line-height: 1.65; border-top: 1px solid var(--border); padding-top: 10px; margin-top: 4px; }
+.chunk-text { font-size: 0.84rem; color: #3a3357; line-height: 1.65; border-top: 1px solid var(--border); padding-top: 10px; margin-top: 4px; }
 
 .tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; padding: 2px 7px; border-radius: 4px; margin: 2px 2px 2px 0; letter-spacing: 0.5px; }
 .tag-entity  { background: var(--ice-dim); border: 1px solid rgba(103,232,249,0.2); color: var(--ice); }
@@ -394,7 +398,7 @@ div[data-testid="stSpinner"] > div { border-top-color: var(--indigo) !important;
 .doc-name { font-weight: 500; font-size: 0.85rem; color: var(--lead); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .doc-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--muted); margin-top: 3px; }
 
-.graph-ctx { background: var(--bg-3); border: 1px solid var(--border); border-left: 2px solid var(--amber); border-radius: 0 var(--r) var(--r) 0; padding: 14px 18px; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #c8d3f0; line-height: 1.7; white-space: pre-wrap; }
+.graph-ctx { background: var(--bg-3); border: 1px solid var(--border); border-left: 2px solid var(--amber); border-radius: 0 var(--r) var(--r) 0; padding: 14px 18px; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #3a3357; line-height: 1.7; white-space: pre-wrap; }
 
 .cap-row { display: flex; flex-direction: column; gap: 4px; }
 .cap-item { display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted); padding: 5px 0; border-bottom: 1px solid var(--border); }
@@ -422,6 +426,56 @@ div[data-testid="stSpinner"] > div { border-top-color: var(--indigo) !important;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
     color: #818cf8; margin-bottom: 14px;
+}
+
+/* ── Step wizard ── */
+.step-nav { display: flex; align-items: center; justify-content: center; gap: 0; margin: 4px 0 34px; }
+.step-item { display: flex; align-items: center; gap: 10px; }
+.step-circle {
+    width: 34px; height: 34px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 0.85rem;
+    border: 2px solid var(--border-2); color: var(--muted); background: #fff;
+    flex-shrink: 0;
+}
+.step-circle.done { background: linear-gradient(135deg, var(--indigo), var(--purple)); border-color: transparent; color: #fff; }
+.step-circle.active { border-color: var(--indigo); color: var(--indigo); background: var(--violet); }
+.step-label { font-size: 0.82rem; font-weight: 600; color: var(--muted); }
+.step-label.active, .step-label.done { color: var(--lead); }
+.step-connector { width: 56px; height: 2px; background: var(--border-2); margin: 0 10px; }
+.step-connector.done { background: linear-gradient(90deg, var(--indigo), var(--purple)); }
+
+/* ── Hero / setup screen ── */
+.hero-wrap { text-align: center; padding: 18px 0 8px; }
+.hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--violet); border: 1px solid var(--violet-2); color: var(--indigo-2);
+    font-size: 0.72rem; font-weight: 600; padding: 5px 14px; border-radius: 100px; margin-bottom: 18px;
+}
+.hero-headline {
+    font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800;
+    font-size: 2.5rem; line-height: 1.15; letter-spacing: -1px; color: var(--lead);
+    max-width: 640px; margin: 0 auto 12px;
+}
+.hero-headline .accent {
+    background: linear-gradient(90deg, var(--indigo), var(--purple));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-tagline { font-size: 1rem; color: var(--muted); max-width: 520px; margin: 0 auto 32px; }
+
+.setup-card {
+    max-width: 560px; margin: 0 auto; background: #fff;
+    border: 1px solid var(--border-2); border-radius: var(--r-xl);
+    padding: 32px 32px 26px; box-shadow: 0 20px 45px -20px rgba(124,58,237,0.25);
+}
+.setup-card-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--indigo-2); margin-bottom: 6px;
+}
+.feature-row { display: flex; gap: 18px; justify-content: center; margin-top: 36px; flex-wrap: wrap; }
+.feature-chip {
+    display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--muted);
+    background: var(--bg-2); border: 1px solid var(--border); padding: 8px 14px; border-radius: 100px;
 }
 
 ::-webkit-scrollbar { width: 4px; height: 4px; }
@@ -888,11 +942,11 @@ class KnowledgeGraphBuilder:
         self.sim_threshold = sim_threshold
 
     def add_document(self, doc_id, doc_name):
-        self.G.add_node(doc_id, label=doc_name[:30], node_type="document", size=25, color="#e8613c")
+        self.G.add_node(doc_id, label=doc_name[:30], node_type="document", size=25, color="#7c3aed")
 
     def add_chunk(self, chunk):
         label = chunk.text[:50].replace("\n", " ") + "…"
-        self.G.add_node(chunk.id, label=label, node_type="chunk", size=12, color="#8ba3c7",
+        self.G.add_node(chunk.id, label=label, node_type="chunk", size=12, color="#a78bfa",
                         doc_id=chunk.doc_id, coherence=chunk.semantic_score)
         if self.G.has_node(chunk.doc_id):
             self.G.add_edge(chunk.doc_id, chunk.id, relation="CONTAINS", weight=1.0)
@@ -901,7 +955,7 @@ class KnowledgeGraphBuilder:
         for ent in chunk.entities:
             eid = f"ent::{ent.lower().replace(' ', '_')}"
             if not self.G.has_node(eid):
-                self.G.add_node(eid, label=ent[:25], node_type="entity", size=18, color="#4db8d4")
+                self.G.add_node(eid, label=ent[:25], node_type="entity", size=18, color="#c084fc")
             self.G.add_edge(chunk.id, eid, relation="MENTIONS", weight=1.0)
         eids = [f"ent::{e.lower().replace(' ', '_')}" for e in chunk.entities]
         for i in range(len(eids)):
@@ -1145,21 +1199,21 @@ class GraphRAGPipeline:
 def render_graph_html(G, highlight_ids=None):
     if not PYVIS_AVAILABLE:
         return "<p style='color:#6b7f99;font-family:monospace;font-size:0.8rem;padding:20px'>Install pyvis for graph visualisation.</p>"
-    net = Network(height="500px", width="100%", bgcolor="#0e1219", font_color="#e8edf5")
+    net = Network(height="500px", width="100%", bgcolor="#1e1b2e", font_color="#f4f2ff")
     net.barnes_hut(gravity=-8000, central_gravity=0.3, spring_length=120)
-    COLOR_MAP = {"document":"#e8613c","chunk":"#8ba3c7","entity":"#4db8d4","concept":"#c9a84c"}
-    HIGHLIGHTED = "#e8613c"
+    COLOR_MAP = {"document":"#7c3aed","chunk":"#a78bfa","entity":"#c084fc","concept":"#f0abfc"}
+    HIGHLIGHTED = "#f43f5e"
     highlight_set = set(highlight_ids or [])
     for node, data in G.nodes(data=True):
         ntype = data.get("node_type","chunk")
-        color = HIGHLIGHTED if node in highlight_set else COLOR_MAP.get(ntype,"#8ba3c7")
+        color = HIGHLIGHTED if node in highlight_set else COLOR_MAP.get(ntype,"#a78bfa")
         size = data.get("size",12)
         if node in highlight_set: size = int(size * 1.6)
         label = data.get("label", str(node)[:20])
         net.add_node(str(node), label=label, color=color, size=size, title=f"[{ntype}] {label}")
     for u, v, data in G.edges(data=True):
         rel = data.get("relation",""); w = data.get("weight",1.0)
-        edge_color = "#1c2230" if rel == "CONTAINS" else "#243040"
+        edge_color = "#3d3562" if rel == "CONTAINS" else "#4a4270"
         net.add_edge(str(u), str(v), title=rel, width=max(0.5, w*2), color=edge_color)
     net.set_options('{"interaction":{"hover":true,"tooltipDelay":100},"physics":{"stabilization":{"iterations":150}}}')
     return net.generate_html()
@@ -1171,6 +1225,7 @@ def render_graph_html(G, highlight_ids=None):
 
 def init_session():
     defaults = {
+        "screen": "setup",           # setup -> ingest -> workspace
         "pipeline": None,
         "chat_history": [],
         "last_result": None,
@@ -1228,43 +1283,6 @@ def sidebar():
         </div>
         """, unsafe_allow_html=True)
 
-        # API config
-        st.markdown("""
-        <div class="sidebar-section">
-            <div class="sidebar-section-label">API Configuration</div>
-        </div>
-        """, unsafe_allow_html=True)
-
-        with st.container():
-            st.markdown("<div style='padding: 0 20px 16px;'>", unsafe_allow_html=True)
-
-            # Read back the persisted key so it survives sidebar collapse/expand
-            groq_key = st.text_input(
-                "Groq API Key",
-                type="password",
-                placeholder="gsk_...",
-                label_visibility="collapsed",
-                help="Get yours at console.groq.com",
-                value=st.session_state.groq_api_key,
-                key="sidebar_groq_key",
-            )
-            # Always keep session state in sync
-            st.session_state.groq_api_key = groq_key
-            st.caption("Groq API Key  ·  console.groq.com")
-
-            groq_models = [
-                "llama-3.3-70b-versatile", "llama-3.1-70b-versatile",
-                "llama-3.1-8b-instant", "mixtral-8x7b-32768", "gemma2-9b-it",
-            ]
-            model = st.selectbox(
-                "Model", groq_models,
-                index=groq_models.index(st.session_state.groq_model),
-                label_visibility="collapsed",
-            )
-            st.caption("Inference model")
-            st.session_state.groq_model = model
-            st.markdown("</div>", unsafe_allow_html=True)
-
         # RAG params
         st.markdown("""
         <div class="sidebar-section">
@@ -1286,30 +1304,18 @@ def sidebar():
                 "Show knowledge graph", value=st.session_state.show_graph)
             st.markdown("</div>", unsafe_allow_html=True)
 
-        # Action buttons
+        # Reset
         st.markdown("<div style='padding: 12px 20px; border-bottom: 1px solid var(--border);'>",
                     unsafe_allow_html=True)
-        col1, col2 = st.columns(2)
-        build_clicked = col1.button("⬡ Build", use_container_width=True)
-        reset_clicked = col2.button("↺ Reset", use_container_width=True)
+        reset_clicked = st.button("↺ Reset Workspace", use_container_width=True)
         st.markdown("</div>", unsafe_allow_html=True)
 
         if reset_clicked:
             for k in ["pipeline", "chat_history", "last_result", "docs_ingested", "total_chunks"]:
                 st.session_state[k] = ([] if k in ("chat_history", "docs_ingested")
                                        else 0 if k == "total_chunks" else None)
+            st.session_state.screen = "setup"
             st.rerun()
-
-        if build_clicked:
-            if not groq_key:
-                st.error("Enter a Groq API key.")
-            else:
-                with st.spinner("Initialising…"):
-                    try:
-                        _build_pipeline(groq_key, model)
-                        st.success("Pipeline ready")
-                    except Exception as e:
-                        st.error(f"{e}")
 
         # Status stats
         pipe = get_pipeline()
@@ -1385,67 +1391,92 @@ def section_heading(text):
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-#  INLINE SETUP CARD  (shown in main area when pipeline is not built)
+#  3-STEP WIZARD  ·  step nav + Screen 1 (API key & build)
 # ═══════════════════════════════════════════════════════════════════════════
 
-def inline_setup_card():
-    """
-    Renders a compact API-key + model + Build row in the main content area.
-    Visible whenever the pipeline hasn't been initialised yet — works even
-    when the sidebar is fully collapsed.
-    """
+_STEPS = [("setup", "1", "API Key"), ("ingest", "2", "Ingest"), ("workspace", "3", "Chat & Tools")]
+
+def step_nav():
+    current = st.session_state.screen
+    order = [s[0] for s in _STEPS]
+    idx = order.index(current)
+    parts = []
+    for i, (key, num, label) in enumerate(_STEPS):
+        state = "done" if i < idx else ("active" if i == idx else "")
+        parts.append(f"""
+        <div class="step-item">
+            <div class="step-circle {state}">{'✓' if state=='done' else num}</div>
+            <div class="step-label {state}">{label}</div>
+        </div>""")
+        if i < len(_STEPS) - 1:
+            conn_state = "done" if i < idx else ""
+            parts.append(f'<div class="step-connector {conn_state}"></div>')
+    st.markdown(f'<div class="step-nav">{"".join(parts)}</div>', unsafe_allow_html=True)
+
+
+def screen_setup():
+    """Screen 1 — enter the Groq API key and build the pipeline."""
     st.markdown("""
-    <div class="inline-setup-card">
-        <div class="inline-setup-label">⚡ Quick setup — or open the sidebar</div>
+    <div class="hero-wrap">
+        <div class="hero-badge">⬡ Graph RAG · Groq-powered</div>
+        <div class="hero-headline">Best-in-class <span class="accent">AI retrieval</span><br/>for your documents</div>
+        <div class="hero-tagline">Semantic chunking, knowledge graphs and cross-encoder reranking —
+            connect your Groq API key to get started.</div>
     </div>
     """, unsafe_allow_html=True)
 
+    st.markdown('<div class="setup-card">', unsafe_allow_html=True)
+    st.markdown('<div class="setup-card-label">Groq API Key</div>', unsafe_allow_html=True)
+    groq_key = st.text_input(
+        "Groq API Key", type="password", placeholder="gsk_...",
+        value=st.session_state.groq_api_key, label_visibility="collapsed",
+        key="setup_groq_key",
+    )
+    st.caption("Don't have one? Get a free key at console.groq.com")
+
+    st.markdown('<div class="setup-card-label" style="margin-top:18px;">Model</div>', unsafe_allow_html=True)
     groq_models = [
         "llama-3.3-70b-versatile", "llama-3.1-70b-versatile",
         "llama-3.1-8b-instant", "mixtral-8x7b-32768", "gemma2-9b-it",
     ]
+    model = st.selectbox(
+        "Model", groq_models,
+        index=groq_models.index(st.session_state.groq_model),
+        label_visibility="collapsed", key="setup_model",
+    )
 
-    qcol1, qcol2, qcol3 = st.columns([3, 2, 1])
+    st.markdown("<div style='height:14px'></div>", unsafe_allow_html=True)
+    build_clicked = st.button("⬡  Build Pipeline & Continue", use_container_width=True, type="primary")
+    st.markdown('</div>', unsafe_allow_html=True)
 
-    with qcol1:
-        inline_key = st.text_input(
-            "Groq API Key (inline)",
-            type="password",
-            placeholder="gsk_...",
-            value=st.session_state.groq_api_key,
-            label_visibility="collapsed",
-            key="inline_groq_key",
-        )
-        st.caption("Groq API Key · console.groq.com")
-
-    with qcol2:
-        inline_model = st.selectbox(
-            "Model (inline)",
-            groq_models,
-            index=groq_models.index(st.session_state.groq_model),
-            label_visibility="collapsed",
-            key="inline_model",
-        )
-
-    with qcol3:
-        inline_build = st.button(
-            "⬡ Build Pipeline",
-            use_container_width=True,
-            key="inline_build",
-        )
-
-    if inline_build:
-        key_to_use = inline_key or st.session_state.groq_api_key
-        if not key_to_use:
-            st.error("Enter a Groq API key.")
+    if build_clicked:
+        if not groq_key:
+            st.error("Enter a Groq API key to continue.")
         else:
             with st.spinner("Initialising pipeline…"):
                 try:
-                    _build_pipeline(key_to_use, inline_model)
-                    st.success("Pipeline ready!")
+                    _build_pipeline(groq_key, model)
+                    st.session_state.screen = "ingest"
                     st.rerun()
                 except Exception as e:
                     st.error(f"{e}")
+
+    if get_pipeline():
+        st.markdown("<div style='height:6px'></div>", unsafe_allow_html=True)
+        c1, c2, c3 = st.columns([1, 1, 1])
+        with c2:
+            if st.button("Pipeline ready — continue →", use_container_width=True):
+                st.session_state.screen = "ingest"
+                st.rerun()
+
+    st.markdown("""
+    <div class="feature-row">
+        <div class="feature-chip">🧩 Semantic chunking</div>
+        <div class="feature-chip">🕸️ Knowledge graph</div>
+        <div class="feature-chip">🎯 Cross-encoder reranking</div>
+        <div class="feature-chip">⚡ Groq LLM inference</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -1477,7 +1508,10 @@ def tab_ingest():
     page_header("Document Ingestion", "Upload · Extract · Chunk · Index")
     pipe = get_pipeline()
     if not pipe:
-        st.info("Initialise the pipeline first — enter your Groq API key above or in the sidebar.")
+        st.info("Pipeline not initialised yet.")
+        if st.button("← Go to API Key setup"):
+            st.session_state.screen = "setup"
+            st.rerun()
         return
 
     if PDF_BACKEND:
@@ -1594,6 +1628,18 @@ pip install PyMuPDF
         show_cols = [c for c in ["name","chunks","pages","words","backend","title","author"]
                      if c in df.columns]
         st.dataframe(df[show_cols], use_container_width=True, hide_index=True)
+
+    st.markdown("<div style='height:10px'></div>", unsafe_allow_html=True)
+    nav_l, nav_r = st.columns([1, 1])
+    with nav_l:
+        if st.button("← Back to API Key", use_container_width=True):
+            st.session_state.screen = "setup"
+            st.rerun()
+    with nav_r:
+        if st.button("Continue to Chat →", use_container_width=True, type="primary",
+                     disabled=not st.session_state.docs_ingested):
+            st.session_state.screen = "workspace"
+            st.rerun()
 
 
 def tab_chat():
@@ -1760,10 +1806,10 @@ def tab_graph():
     st.markdown("""
     <div style="display:flex; gap:20px; margin-top:10px;
                 font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--muted);">
-        <span style="color:#e8613c">⬡ Document</span>
-        <span style="color:#8ba3c7">⬡ Chunk</span>
-        <span style="color:#4db8d4">⬡ Entity</span>
-        <span style="color:#e8613c; opacity:0.6">⬡ Retrieved</span>
+        <span style="color:#7c3aed">⬡ Document</span>
+        <span style="color:#a78bfa">⬡ Chunk</span>
+        <span style="color:#c084fc">⬡ Entity</span>
+        <span style="color:#f43f5e; opacity:0.7">⬡ Retrieved</span>
     </div>
     """, unsafe_allow_html=True)
 
@@ -1803,7 +1849,7 @@ def tab_analytics():
     chunks = list(pipe.chunks.values())
     PLOT_THEME = dict(
         plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-        font_color="#8ba3c7", title_font_size=13,
+        font_color="#766f96", title_font_size=13,
         title_font_family="JetBrains Mono", font_family="JetBrains Mono",
     )
 
@@ -1813,10 +1859,10 @@ def tab_analytics():
             x=[c.semantic_score for c in chunks], nbins=20,
             title="CHUNK COHERENCE DISTRIBUTION",
             labels={"x":"Coherence","y":"Count"},
-            color_discrete_sequence=["#8ba3c7"],
+            color_discrete_sequence=["#a78bfa"],
         )
         fig.update_layout(**PLOT_THEME, showlegend=False)
-        fig.update_traces(marker_line_color="#1c2230", marker_line_width=1)
+        fig.update_traces(marker_line_color="#ffffff", marker_line_width=1)
         st.plotly_chart(fig, use_container_width=True)
 
     with col2:
@@ -1826,7 +1872,7 @@ def tab_analytics():
             x=list(doc_chunk_counts.keys()), y=list(doc_chunk_counts.values()),
             title="CHUNKS PER DOCUMENT",
             labels={"x":"Document","y":"Chunks"},
-            color_discrete_sequence=["#e8613c"],
+            color_discrete_sequence=["#7c3aed"],
         )
         fig2.update_layout(**PLOT_THEME, showlegend=False)
         st.plotly_chart(fig2, use_container_width=True)
@@ -1838,11 +1884,11 @@ def tab_analytics():
         fig3 = px.pie(
             names=list(type_counts.keys()), values=list(type_counts.values()),
             title="GRAPH NODE TYPES",
-            color_discrete_sequence=["#e8613c","#8ba3c7","#4db8d4","#c9a84c"],
+            color_discrete_sequence=["#7c3aed","#a78bfa","#c084fc","#f0abfc"],
             hole=0.5,
         )
         fig3.update_layout(**PLOT_THEME)
-        fig3.update_traces(textfont_color="#e8edf5")
+        fig3.update_traces(textfont_color="#1e1b2e")
         st.plotly_chart(fig3, use_container_width=True)
 
     with col4:
@@ -1850,7 +1896,7 @@ def tab_analytics():
         top_pr = sorted(pr.items(), key=lambda x: -x[1])[:15]
         labels = [G.nodes[n].get("label", n)[:22] if G.has_node(n) else n[:22] for n, _ in top_pr]
         values = [v for _, v in top_pr]
-        fig4 = go.Figure(go.Bar(x=values, y=labels, orientation="h", marker_color="#4db8d4"))
+        fig4 = go.Figure(go.Bar(x=values, y=labels, orientation="h", marker_color="#c084fc"))
         fig4.update_layout(**PLOT_THEME, title="TOP NODES BY PAGERANK",
                            yaxis=dict(autorange="reversed"))
         st.plotly_chart(fig4, use_container_width=True)
@@ -1926,41 +1972,42 @@ streamlit run graph_rag_app.py""", language="bash")
 #  MAIN
 # ═══════════════════════════════════════════════════════════════════════════
 
+def screen_workspace():
+    """Screen 3 — Chat plus the supporting analysis tools."""
+    st.markdown("""
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:700;
+                    font-size:1.7rem; color:var(--lead); letter-spacing:-0.6px; line-height:1;">
+            Graph RAG <span style="color:var(--indigo-2);">Workspace</span>
+        </div>
+    </div>
+    <div style="height:1px; background:var(--border); margin:14px 0 22px;"></div>
+    """, unsafe_allow_html=True)
+
+    tabs = st.tabs([
+        "  Chat  ", "  Retrieval  ", "  Graph  ", "  Analytics  ", "  Ingest More  ", "  About  ",
+    ])
+    with tabs[0]: tab_chat()
+    with tabs[1]: tab_retrieval()
+    with tabs[2]: tab_graph()
+    with tabs[3]: tab_analytics()
+    with tabs[4]: tab_ingest()
+    with tabs[5]: tab_about()
+
+
 def main():
     init_session()
     sidebar()
 
-    # Top-level app header
-    st.markdown("""
-    <div style="display:flex; align-items:center; gap:16px; margin-bottom:4px;">
-        <div style="font-style:italic; font-weight:300;
-                    font-size:2.2rem; color:var(--lead); letter-spacing:-1px; line-height:1;">
-            Graph RAG
-        </div>
-        <div style="font-family:'JetBrains Mono',monospace; font-size:0.62rem; color:var(--muted);
-                    letter-spacing:2px; text-transform:uppercase; padding-top:6px;">
-            Semantic Chunking · Knowledge Graphs · Cross-Encoder Reranking · Groq LLM
-        </div>
-    </div>
-    <div style="height:1px; background:var(--border); margin-bottom:20px;"></div>
-    """, unsafe_allow_html=True)
+    step_nav()
 
-    # ── Inline setup card — visible whenever pipeline is not built ──────────
-    # Works even when the sidebar is collapsed.
-    if not get_pipeline():
-        inline_setup_card()
-
-    # ── Main tabs ────────────────────────────────────────────────────────────
-    tabs = st.tabs([
-        "  Ingest  ", "  Chat  ", "  Retrieval  ",
-        "  Graph  ", "  Analytics  ", "  About  ",
-    ])
-    with tabs[0]: tab_ingest()
-    with tabs[1]: tab_chat()
-    with tabs[2]: tab_retrieval()
-    with tabs[3]: tab_graph()
-    with tabs[4]: tab_analytics()
-    with tabs[5]: tab_about()
+    screen = st.session_state.screen
+    if screen == "setup":
+        screen_setup()
+    elif screen == "ingest":
+        tab_ingest()
+    else:
+        screen_workspace()
 
 
 if __name__ == "__main__":
